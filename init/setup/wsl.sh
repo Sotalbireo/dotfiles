@@ -4,7 +4,7 @@ echo '> Install npiperelay/socat'
 sudo apt-get -y install socat
 TMP_DIR=$(mktemp -d)
 cd "$TMP_DIR" || exit
-curl -sL -H 'Cache-Control: no-cache,no-store' https://github.com/jstarks/npiperelay/releases/download/v0.1.0/npiperelay_windows_386.zip -o npiperelay.zip
+curl -fsSL -H https://github.com/jstarks/npiperelay/releases/download/v0.1.0/npiperelay_windows_386.zip -o npiperelay.zip
 unzip -o npiperelay.zip
 sudo cp -f ./npiperelay.exe /usr/local/bin/npiperelay.exe
 cd "$HOME" || exit
@@ -12,7 +12,7 @@ rm -rf "$TMP_DIR"
 
 if ! has wslvar; then
 	echo "> Install wslvar"
-	sudo apt-get -y install wslu
+	sudo apt-get -y -q install wslu
 else
 	echo "> [SKIP] Install wslvar"
 fi

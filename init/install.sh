@@ -9,7 +9,7 @@ is_wsl() {
 
 #############################################
 echo 'Clone sotalbireo/dotfiles'
-if [ -e ~/dotfiles ]; then
+if test -e ~/dotfiles; then
   rm -rf ~/dotfiles
 fi
 git clone https://github.com/sotalbireo/dotfiles.git ~/dotfiles
@@ -21,7 +21,7 @@ git clone https://github.com/sotalbireo/dotfiles.git ~/dotfiles
 IS_INSTALL_BREW=true
 
 
-if [ "$(uname)" == 'Darwin' ]; then
+if test "$(uname)" -eq 'Darwin'; then
   echo 'The device was detected as macos'
   # install brew
   /usr/bin/env bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
