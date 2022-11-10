@@ -92,3 +92,5 @@ fi
 
 echo 'Set symbolic link tools'
 ~/dotfiles/tools/link.sh
+
+source ~/.bash_profile
