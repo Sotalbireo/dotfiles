@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-sudo apt-get -y update
-sudo apt-get -y upgrade
-sudo apt-get -y install build-essential curl file git
+sudo apt-get -y -q update
+sudo apt-get -y -q upgrade
+sudo apt-get -y -q install build-essential curl file git

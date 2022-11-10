@@ -2,6 +2,7 @@
 
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/.bash_profile ~/.bash_profile
+mkdir -p ~/.ssh
 ln -sf ~/dotfiles/.ssh/config ~/.ssh/config
 
 if [ "$(uname)" == 'Darwin' ]; then
