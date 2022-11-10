@@ -32,7 +32,7 @@ fi
 # wslconf
 USERPROFILE="$(wslvar USERPROFILE)"
 if [ -n "$USERPROFILE" ]; then
-	WINHOME="$(wslpath :"$USERPROFILE")"
+	WINHOME="$(wslpath "$USERPROFILE")"
 	echo "> \$WINHOME: $WINHOME"
 	ln -sL ~/dotfiles/wsl/.wslconfig "$WINHOME"/
 	sudo ln -sL ~/dotfiles/wsl/wsl.conf /etc/wsl.conf
