@@ -39,7 +39,7 @@ if is_wsl; then
   sudo apt-get -y socat
   TMP_DIR=$(mktemp -d)
   cd "$TMP_DIR"
-  curl -L https://github.com/jstarks/npiperelay/releases/download/v0.1.0/npiperelay_windows_386.zip -o npiperelay.zip
+  curl -sL -H 'Cache-Control: no-cache,no-store' https://github.com/jstarks/npiperelay/releases/download/v0.1.0/npiperelay_windows_386.zip -o npiperelay.zip
   unzip -o npiperelay.zip
   sudo cp -f ./npiperelay.exe /usr/local/bin/npiperelay.exe
   cd "$HOME"
