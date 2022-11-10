@@ -8,14 +8,11 @@ is_wsl() {
 }
 
 #############################################
-echo -n "Set install branch name >"
-read branchName
-
 echo 'Clone sotalbireo/dotfiles'
 if [ -e ~/dotfiles ]; then
   rm -rf ~/dotfiles
 fi
-git clone -b $branchName https://github.com/sotalbireo/dotfiles.git ~/dotfiles
+git clone https://github.com/sotalbireo/dotfiles.git ~/dotfiles
 
 
 ~/dotfiles/init/setup/link.sh
