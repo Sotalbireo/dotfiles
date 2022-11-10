@@ -13,10 +13,9 @@ if [ -e ~/dotfiles ]; then
   rm -rf ~/dotfiles
 fi
 git clone https://github.com/sotalbireo/dotfiles.git ~/dotfiles
-cd ~/dotfiles || exit
 
 
-. ./init/setup/link.sh
+. ~/dotfiles/init/setup/link.sh
 
 
 IS_INSTALL_BREW=true
@@ -28,14 +27,14 @@ if [ "$(uname)" == 'Darwin' ]; then
   /usr/bin/env bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
   source "$HOME"/.bash_profile
-  . ./init/setup/mac.sh
+  . ~/dotfiles/init/setup/mac.sh
 fi
 
 
 if is_wsl; then
   echo 'The device was detected as Windows Subsystem on Linux'
-  . ./init/setup/apt.sh
-  . ./init/setup/wsl.sh
+  . ~/dotfiles/init/setup/apt.sh
+  . ~/dotfiles/init/setup/wsl.sh
 else
   echo ""
 fi
@@ -45,13 +44,13 @@ source "$HOME"/.bash_profile
 
 if "${IS_INSTALL_BREW}"; then
   echo 'Run brew'
-  . ./init/setup/brew.sh
+  . ~/dotfiles/init/setup/brew.sh
 fi
 
 # echo 'install tools'
-# . ./init/setup/common.sh
+# . ~/dotfiles/init/setup/common.sh
 
 echo 'Set symbolic link tools'
-. ./tools/link.sh
+. ~/dotfiles/tools/link.sh
 
 source "$HOME"/.bash_profile
