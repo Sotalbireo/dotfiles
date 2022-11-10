@@ -26,7 +26,7 @@ if test "$(uname)" -eq 'Darwin'; then
   # install brew
   /usr/bin/env bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-  source "$HOME"/.bash_profile
+  source ~/.bash_profile
   . ~/dotfiles/init/setup/mac.sh
 fi
 
@@ -39,7 +39,7 @@ else
   echo ""
 fi
 
-source "$HOME"/.bash_profile
+source ~/.bash_profile
 
 
 if "${IS_INSTALL_BREW}"; then
@@ -53,4 +53,4 @@ fi
 echo 'Set symbolic link tools'
 . ~/dotfiles/tools/link.sh
 
-source "$HOME"/.bash_profile
+source ~/.bash_profile
