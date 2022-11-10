@@ -1,0 +1,42 @@
+[core]
+	autocrlf = false
+	pager = delta
+	editor = vim -c \"set fenc=utf-8\"
+
+[alias]
+	graph = log --graph --date-order -C -M --pretty=format:\"%x09%C(yellow)<%h>%Creset%x09%C(cyan bold)[%an]%C(green reverse)%d%Creset%x09%s\" --all --date=short
+
+[delta]
+	plus-color = "#012800"
+	minus-color = "#340001"
+	syntax-theme = Monokai Extended
+	line-numbers = true
+	side-by-side = true
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[ghq]
+	root = ~/repositories
+[ghq "https://gitlab.com"]
+	vcs = git
+[ghq "ssh://gitlab.com"]
+	vcs = git
+[ghq "ssh://heroku.com"]
+	vcs = git
+
+[http]
+	postBuffer = 64M
+
+[init]
+	defaultBranch = master
+
+[interactive]
+	diffFinder = delta --color-only
+
+[merge]
+	diffstat = true
+	keepbackup = false
