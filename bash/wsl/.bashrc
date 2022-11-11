@@ -21,7 +21,7 @@ HISTFILESIZE=2000
 shopt -s histappend
 shopt -s checkwinsize
 shopt -s globstar
-shopt -s histberify
+shopt -s histverify
 
 alias ll='ls -alF'
 alias la='ls -A'
@@ -71,8 +71,8 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_VERBOSE=0
 
 # asdf-vm
-. $(brew --prefix asdf)/asdf.sh
-. $(brew --prefix asdf)/completions/asdf.bash
+. ~/.asdf/asdf.sh
+. ~/.asdf/completions/asdf.bash
 
 # marp
 alias marp='npx @marp-team/marp-cli --allow-local-files'
