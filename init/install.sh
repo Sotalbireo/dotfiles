@@ -21,7 +21,7 @@ git clone -q https://github.com/sotalbireo/dotfiles.git ~/dotfiles
 IS_INSTALL_BREW=true
 
 
-if test "$(uname)" -eq 'Darwin'; then
+if test "$(uname)" = 'Darwin'; then
   echo 'The device was detected as macos'
   # install brew
   /usr/bin/env bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"

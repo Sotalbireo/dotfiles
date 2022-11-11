@@ -13,7 +13,7 @@ brew install -q php
 brew install -q tldr
 brew install -q yt-dlp
 
-if test "$(uname)" -eq 'Darwin'; then
+if test "$(uname)" = 'Darwin'; then
 brew install -q coreutils
 brew install -q gnu-sed
 fi

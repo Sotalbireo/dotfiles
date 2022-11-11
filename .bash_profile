@@ -2,6 +2,6 @@ if [ -f ~/.bashrc ]; then
   source ~/.bashrc
 fi
 
-if [ -e /proc/sys/fs/binfmt_misc/WSLInterop ]; then
+if type wslpath > /dev/null 2>&1; then
   eval "$($(brew --prefix)/bin/brew shellenv)"
 fi
