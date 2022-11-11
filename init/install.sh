@@ -12,7 +12,7 @@ echo 'Clone sotalbireo/dotfiles'
 if test -e ~/dotfiles; then
   rm -rf ~/dotfiles
 fi
-git clone https://github.com/sotalbireo/dotfiles.git ~/dotfiles
+git clone -q https://github.com/sotalbireo/dotfiles.git ~/dotfiles
 
 
 . ~/dotfiles/init/setup/link.sh

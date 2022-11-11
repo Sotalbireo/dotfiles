@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
 
-brew install asdf
-brew install bat
-brew install deno
-brew install ghq
-brew install git-delta
-brew install go-task
-brew install htop
-brew install neofetch
-brew install peco
-brew install php
-brew install tldr
-brew install yt-dlp
+brew install -q asdf
+brew install -q bat
+brew install -q deno
+brew install -q ghq
+brew install -q git-delta
+brew install -q go-task/tap/go-task
+brew install -q htop
+brew install -q neofetch
+brew install -q peco
+brew install -q php
+brew install -q tldr
+brew install -q yt-dlp
 
-if [ "$(uname)" == 'Darwin' ]; then
-brew install coreutils
-brew install gnu-sed
+if test "$(uname)" -eq 'Darwin'; then
+brew install -q coreutils
+brew install -q gnu-sed
 fi
