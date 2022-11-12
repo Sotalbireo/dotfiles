@@ -53,4 +53,6 @@ fi
 echo 'Set symbolic link tools'
 . ~/dotfiles/tools/link.sh
 
-source ~/.bash_profile
+
+echo "Reboot shell"
+exec "$SHELL" -l
