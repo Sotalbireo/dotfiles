@@ -33,12 +33,20 @@ else
 fi
 
 # wslconf
-# USERPROFILE="$(wslvar USERPROFILE)"
-# if test -n "$USERPROFILE"; then
-#   WINHOME="$(wslpath "$USERPROFILE")"
-#   echo "> \$WINHOME: $WINHOME"
-#   cp -f ~/dotfiles/wsl/.wslconfig "$WINHOME"/
-#   sudo cp -f ~/dotfiles/wsl/wsl.conf /etc/wsl.conf
-# else
-#   echo "> [ERR] USERPROFILEの値が取得できませんでした"
-# fi
+USERPROFILE="$(wslvar USERPROFILE)"
+if test -n "$USERPROFILE"; then
+  WINHOME="$(wslpath "$USERPROFILE")"
+  echo "> \$WINHOME: $WINHOME"
+  cp -f ~/dotfiles/wsl/.wslconfig "$WINHOME"/
+  cp -f ~/dotfiles/wsl/.wslgconfig "$WINHOME"/
+  sudo cp -f ~/dotfiles/wsl/wsl.conf /etc/wsl.conf
+else
+  echo "> [ERR] USERPROFILEの値が取得できませんでした"
+fi
+
+# git-cola
+# note: brewで依存してるqtがmacos依存？
+if ! has git-cola; then
+  echo '> Install git-cola'
+  sudo apt-get -y -q install git-cola
+fi

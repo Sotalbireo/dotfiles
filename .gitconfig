@@ -6,6 +6,12 @@
 [alias]
 	graph = log --graph --date-order -C -M --pretty=format:\"%x09%C(yellow)<%h>%Creset%x09%C(cyan bold)[%an]%C(green reverse)%d%Creset%x09%s\" --all --date=short
 
+[cola]
+	startupmode = list
+	spellcheck = false
+	tabwidth = 2
+	fontdiff = Cica,14,-1,5,50,0,0,0,0,0
+
 [delta]
 	plus-color = "#012800"
 	minus-color = "#340001"
