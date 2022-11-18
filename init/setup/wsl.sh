@@ -44,6 +44,9 @@ else
   echo "> [ERR] USERPROFILEの値が取得できませんでした"
 fi
 
+echo '> Install fonts'
+sudo apt-get -y -q install fonts-ipafont fonts-noto-cjk-extra fonts-noto-color-emoji fonts-noto-ui-extra fonts-open-sans
+
 # git-cola
 # note: brewで依存してるqtがmacos依存？
 if ! has git-cola; then
