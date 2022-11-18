@@ -10,7 +10,11 @@
 	startupmode = list
 	spellcheck = false
 	tabwidth = 2
-	fontdiff = Cica,14,-1,5,50,0,0,0,0,0
+	fontdiff = Noto Sans CJK JP,14,-1,5,50,0,0,0,0,0
+	theme = flat-dark-grey
+	icontheme = dark
+	hidpi = 1.5
+	boldheaders = true
 
 [delta]
 	plus-color = "#012800"
