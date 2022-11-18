@@ -13,6 +13,11 @@ brew install -q php
 brew install -q tldr
 brew install -q yt-dlp
 
+if test "$(uname)" = 'Darwin'; then
+brew install -q coreutils
+brew install -q gnu-sed
+
+# Casks only support on macos
 brew tap caskroom/fonts
 brew install -q --cask font-cica
 brew install -q --cask font-last-resort
@@ -20,8 +25,4 @@ brew install -q --cask font-noto-color-emoji
 brew install -q --cask font-noto-sans-cjk
 brew install -q --cask font-noto-serif-cjk
 brew install -q --cask font-sarasa-gothic
-
-if test "$(uname)" = 'Darwin'; then
-brew install -q coreutils
-brew install -q gnu-sed
 fi
