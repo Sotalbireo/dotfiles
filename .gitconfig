@@ -23,6 +23,9 @@
 	line-numbers = true
 	side-by-side = true
 
+[diff]
+	tool = delta
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -50,3 +53,4 @@
 [merge]
 	diffstat = true
 	keepbackup = false
+	tool = delta
