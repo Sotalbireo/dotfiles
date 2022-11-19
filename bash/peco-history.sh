@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
 function peco-history() {
-  BUFFER=$(history | tac | sed -r 's/^\s*?[0-9]+\s?*//' | peco --query "$LBUFFER")
-  CURSOR=$#BUFFER
+  SELECTED_COMMAND=$(tail -r ~/.bash_history | peco)
+  if [ "$SELECTED_COMMAND" != "" ]; then
+    echo "exec: ${SELECTED_COMMAND}"
+    eval $SELECTED_COMMAND
+    history -s $SELECTED_COMMAND
+  fi
 }
