@@ -14,7 +14,7 @@ esac
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth:erasedups
-HISTIGNORE=ls:ll:phist
+HISTIGNORE=ls:ll:hist
 HISTSIZE=2000
 HISTFILESIZE=2000
 
@@ -27,7 +27,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias gh='ghq-list'
-alias phist='peco-history'
+alias hist='peco-history'
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -88,3 +88,7 @@ if [[ $ALREADY_RUNNING != "0" ]]; then
     echo "Starting SSH-Agent relay..."
     (setsid socat UNIX-LISTEN:$SSH_AUTH_SOCK,fork EXEC:"/usr/local/bin/npiperelay.exe -ei -s //./pipe/openssh-ssh-agent",nofork &) >/dev/null 2>&1
 fi
+
+# VS Code
+vscode=$(wslvar Path | awk '{cnt=split($0,path,";");for (i=1;i<=cnt;i++)print path[i]}' | grep 'VS Code\\bin')
+export PATH="$(wslpath "$vscode")":$PATH
