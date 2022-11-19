@@ -18,10 +18,13 @@ HISTIGNORE=ls:ll:hist
 HISTSIZE=2000
 HISTFILESIZE=2000
 
-shopt -s histappend
+shopt -u histappend # セッションクローズ時のヒストリファイルへの自動追記
 shopt -s checkwinsize
 shopt -s globstar
 shopt -s histverify
+
+export PS1='\[\e[1;33m\]\u@\h \w ->\n\[\e[1;36m\] \@ \d\$\[\e[m\] '
+export PROMPT_COMMAND="history -a ; history -r"
 
 alias ll='ls -alF'
 alias la='ls -A'
@@ -37,7 +40,6 @@ case "$TERM" in
   xterm-color|*-256color) color_prompt=yes;;
 esac
 
-export PS1='\[\e[1;33m\]\u@\h \w ->\n\[\e[1;36m\] \@ \d\$\[\e[m\] '
 export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
 export PATH=$HOME/.deno/bin:$PATH
 
