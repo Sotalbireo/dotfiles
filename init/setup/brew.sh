@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
 brew install -q asdf
+brew install -q aria2
 brew install -q bat
 brew install -q deno
+brew install -q ffmpeg
 brew install -q ghq
 brew install -q git-delta
 brew install -q go-task/tap/go-task

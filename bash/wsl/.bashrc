@@ -70,7 +70,7 @@ fi
 
 # homebrew
 export HOMEBREW_NO_AUTO_UPDATE=1
-export HOMEBREW_VERBOSE=0
+# export HOMEBREW_VERBOSE=1
 
 # asdf-vm
 . /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh
@@ -94,3 +94,6 @@ fi
 # VS Code
 vscode=$(wslvar Path | awk '{cnt=split($0,path,";");for (i=1;i<=cnt;i++)print path[i]}' | grep 'VS Code\\bin')
 export PATH="$(wslpath "$vscode")":$PATH
+
+# aria2
+alias tget=aria2c --seed-time=0

@@ -18,9 +18,6 @@ git clone -q https://github.com/sotalbireo/dotfiles.git ~/dotfiles
 . ~/dotfiles/init/setup/link.sh
 
 
-IS_INSTALL_BREW=true
-
-
 if test "$(uname)" = 'Darwin'; then
   echo 'The device was detected as macos'
   # install brew
@@ -39,13 +36,14 @@ else
   echo ""
 fi
 
-source ~/.bash_profile
+exec "$SHELL" -l
 
 
-if "${IS_INSTALL_BREW}"; then
-  echo 'Run brew'
-  . ~/dotfiles/init/setup/brew.sh
-fi
+echo 'Run brew'
+. ~/dotfiles/init/setup/brew.sh
+
+echo 'Run asdf'
+. ~/dotfiles/init/setup/asdf.sh
 
 # echo 'install tools'
 # . ~/dotfiles/init/setup/common.sh
