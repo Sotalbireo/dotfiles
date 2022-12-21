@@ -73,8 +73,8 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_VERBOSE=0
 
 # asdf-vm
-. ~/.asdf/asdf.sh
-. ~/.asdf/completions/asdf.bash
+. /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh
+. /home/linuxbrew/.linuxbrew/etc/bash_completion.d/asdf.bash
 
 # marp
 alias marp='npx @marp-team/marp-cli --allow-local-files'
