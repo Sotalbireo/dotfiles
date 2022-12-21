@@ -36,8 +36,6 @@ else
   echo ""
 fi
 
-exec "$SHELL" -l
-
 
 echo 'Run brew'
 . ~/dotfiles/init/setup/brew.sh
