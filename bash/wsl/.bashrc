@@ -23,8 +23,8 @@ shopt -s checkwinsize
 shopt -s globstar
 shopt -s histverify
 
-export PS1='\[\e[1;33m\]\u@\h \w ->\n\[\e[1;36m\] \@ \d\$\[\e[m\] '
-export PROMPT_COMMAND="history -a ; history -r"
+# export PS1='\[\e[1;33m\]\u@\h \w ->\n\[\e[1;36m\] \@ \d\$\[\e[m\] '
+# export PROMPT_COMMAND="history -a ; history -r"
 
 alias ll='ls -alF'
 alias la='ls -A'
