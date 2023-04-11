@@ -20,7 +20,7 @@ brew install -q coreutils
 brew install -q gnu-sed
 
 # Casks only support on macos
-brew tap caskroom/fonts
+brew tap homebrew/cask-fonts
 brew install -q --cask font-cica
 brew install -q --cask font-last-resort
 brew install -q --cask font-noto-color-emoji
